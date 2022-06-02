@@ -256,11 +256,11 @@ header {
     width: 0rem;
     margin-bottom: 40px;
     transition: width 0.2s linear;
-    &:hover {
-      width: 13.2rem;
-    }
     @media screen and(min-width:992px) {
       font-size: 1.8rem;
+      &:hover {
+        width: 13.2rem;
+      }
     }
     @media screen and(min-width: 1120px) {
       font-size: 1.8rem;
