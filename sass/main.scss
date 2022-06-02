@@ -1,0 +1,663 @@
+@import "animation.scss";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+$loader-duration: 1000ms;
+$loader-delay: 150ms;
+$accueil-delay: $loader-duration + $loader-delay;
+
+.accueil {
+  animation: accueil 3000ms $accueil-delay both;
+  background-color: white;
+}
+html {
+  display: block;
+  text-align: center;
+  h2,
+  h3,
+  p,
+  li,
+  .numberCircle {
+    font-family: "Roboto", sans-serif;
+  }
+  h1, .lettre {
+    font-family: "Shrikhand", sans-serif;
+  }
+  @media screen and(min-width: 280px) and (max-width: 400px) {
+    width: 140%;
+  }
+}
+.loader {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  position: fixed;
+  .lettre {
+    color: #484848;
+    font-size: 75px;
+    letter-spacing: 0px;
+    animation: flash 1.2s linear 3;
+    @media screen and(min-width: 280px) and (max-width: 550px) {
+      font-size: 55px;
+    }
+  }
+}
+.lettre:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.lettre:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.lettre:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.lettre:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.lettre:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.lettre:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.lettre:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.lettre:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.lettre:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.lettre:nth-child(10) {
+  animation-delay: 1s;
+}
+.lettre:nth-child(11) {
+  animation-delay: 1.1s;
+}
+
+header {
+  background-color: whitesmoke;
+  padding: 40px 0 0 0;
+  .header_loc {
+    margin-bottom: 80px;
+    input {
+      border: 1px solid lightgrey;
+      border-bottom: none;
+      background: linear-gradient(#c7c7c7, 5%, rgb(235, 233, 233));
+      padding: 30px 0 30px 0px;
+      font-size: 1.9rem;
+      width: 100%;
+      text-align: center;
+      @media screen and(min-width: 280px) and (max-width: 540px) {
+        font-size: 1.6rem;
+      }
+    }
+    span {
+      position: absolute;
+      font-size: 1.9rem;
+      margin: 30px 0 0 150px;
+      @media screen and(min-width: 280px) and (max-width: 540px) {
+        font-size: 1.6rem;
+        margin-left: 60px;
+      }
+    }
+    @media screen and(min-width:992px) {
+      input {
+        border-radius: 50px;
+        border: 1px solid lightgrey;
+        border-bottom: whitesmoke;
+        font-size: 1.2rem;
+        padding: 10px 0 10px 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: linear-gradient(lightgrey, 5%, rgb(255, 255, 255));
+      }
+      span {
+        position: fixed;
+        margin: 10px 0 0 30px;
+        font-size: 1.3rem;
+      }
+    }
+    @media screen and(min-width:1700px) {
+      input {
+        border-radius: 50px;
+        border: 1px solid lightgrey;
+        border-bottom: whitesmoke;
+        font-size: 2rem;
+        padding: 10px 0 10px 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: linear-gradient(lightgrey, 5%, rgb(255, 255, 255));
+      }
+      span {
+        position: fixed;
+        margin: 14px 0 0 30px;
+        font-size: 1.8rem;
+      }
+    }
+  }
+  @media screen and(min-width:992px) {
+    .header_head {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 3% 0 3%;
+    }
+  }
+  @media screen and(min-width:992px) {
+    background: linear-gradient(to bottom, whitesmoke 70%, white);
+  }
+}
+.header_logo {
+  margin-bottom: 4%;
+  @media screen and(min-width:992px) and(max-width: 1699px) {
+    img {
+      width: 300px;
+    }
+  }
+  @media screen and(min-width: 1700px) {
+    img {
+    width: 400px;
+    }
+  }
+}
+
+.header_instruction {
+  font-size: 2rem;
+  padding: 0 30px 0 30px;
+  h2 {
+    margin-bottom: 20px;
+  }
+  p {
+    color: grey;
+  }
+  @media screen and(min-width: 280px) and (max-width: 540px) {
+    font-size: 1.4rem;
+  }
+  @media screen and(min-width:1700px) {
+    font-size: 3rem;
+  }
+}
+/* header */
+
+/* buttons */
+.buttons {
+  font-size: 1.7rem;
+  color: white;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  border: 1px solid transparent;
+  border-radius: 80px;
+  padding: 30px 50px 30px 50px;
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 300ms;
+  &:hover {
+    box-shadow: 0px 5px 25px grey;
+    transform: scale(1.05);
+  }
+  @media screen and(min-width: 280px) and (max-width: 540px) {
+    font-size: 1.3rem;
+  }
+  @media screen and(min-width:1700px) {
+    font-size: 2.3rem;
+  }
+}
+
+/* buttons */
+
+/* Partie principal desktop */
+
+.mainFlex {
+  @media screen and(min-width:992px) {
+    display: flex;
+    width: 100%;
+  }
+}
+
+/* Partie principal desktop */
+
+/* fonctionnement */
+
+.main_first {
+  font-size: 2rem;
+  width: 95%;
+  margin: 30px 0 110px 0;
+  @media screen and(min-width:992px) {
+    flex: 1;
+    margin-top: 18%;
+    margin-right: 2%;
+    width: 100%;
+    font-size: 1.3rem;
+  }
+  @media screen and(min-width: 1120px) {
+    font-size: 1.1rem;
+  }
+  @media screen and(min-width:1700px) {
+    font-size: 2.4rem;
+    margin-top: 310px;
+  }
+  h2 {
+    text-align: left;
+    margin-left: 5%;
+    padding: 40px 0 10px 0;
+    border-bottom: 4px solid #99e2d0;
+    width: 0rem;
+    margin-bottom: 40px;
+    transition: width 0.2s linear;
+    &:hover {
+      width: 13.2rem;
+    }
+    @media screen and(min-width:992px) {
+      font-size: 1.8rem;
+    }
+    @media screen and(min-width: 1120px) {
+      font-size: 1.8rem;
+    }
+    @media screen and(min-width:1700px) {
+      font-size: 3.7rem;
+      border-bottom: 8px solid #99e2d0;
+      &:hover {
+        width: 27rem;
+      }
+    }
+  }
+  p {
+    @media screen and(min-width:992px) and (max-width: 1120px) {
+      font-size: 1rem;
+    }
+  }
+  span {
+    padding: 0 12% 0 12%;
+    color: grey;
+  }
+}
+.function {
+  display: flex;
+  margin-left: 6%;
+  margin-bottom: 7%;
+  border: 1px solid transparent;
+  background-color: whitesmoke;
+  border-radius: 45px;
+  padding: 60px 25px 60px 25px;
+  box-shadow: 0px 5px 25px lightgrey;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  @media screen and(min-width:992px) {
+    padding: 30px 25px 30px 25px;
+  }
+  @media screen and(min-width: 280px) and (max-width: 578px) {
+    font-size: 1.2rem;
+    padding: 30px 25px 30px 25px;
+  }
+  @media screen and(min-width: 579px) and (max-width: 991px) {
+    font-size: 1.8rem;
+    padding: 30px 25px 30px 25px;
+  }
+  @media screen and(min-width: 1700px) and (max-width: 2000px) {
+    font-size: 1.9rem;
+  }
+  @media screen and(min-width: 2001px) {
+    font-size: 2.2rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 0 0;
+    transition: all 0.5s;
+    z-index: -1;
+    background: #f2e8f7;
+    @media screen and(min-width:1700px) {
+      top: 105px;
+    }
+    @media screen and(min-width: 579px) and (max-width: 991px) {
+      top: 95px;
+    }
+  }
+  &:hover::before {
+    top: 0;
+    border-radius: 0px;
+    cursor: pointer;
+  }
+  &:hover {
+    box-shadow: 0px 15px 35px rgb(168, 168, 168);
+    transition: box-shadow 500ms;
+    span {
+      color: #9356dc;
+    }
+  }
+}
+
+.numberCircle {
+  border: 1px solid #9356dc;
+  border-radius: 20px;
+  background-color: #9356dc;
+  padding: 5px 12px 2px 12px;
+  color: white;
+  float: left;
+  margin-top: 10%;
+  margin-left: 2.5%;
+  position: absolute;
+  font-size: 1.5rem;
+  z-index: 2;
+
+  @media screen and(min-width:992px) and(max-width: 1119px) {
+    font-size: 1.3rem;
+    padding: 2px 8px 2px 8px;
+    margin-top: 2.5%;
+    margin-left: 1%;
+  }
+  @media screen and(min-width: 1120px) {
+    margin-top: 2.1%;
+    font-size: 1.2rem;
+    padding: 2px 8px 2px 8px;
+    margin-left: 1%;
+  }
+  @media screen and(min-width: 280px) and (max-width: 539px) {
+    margin-top: 5%;
+    margin-left: 2%;
+  }
+  @media screen and(min-width: 540px) and(max-width: 759px) {
+    margin-top: 4%;
+  }
+  @media screen and(min-width: 760px) and(max-width: 767px) {
+    margin-top: 4%;
+    margin-left: 4%;
+  }
+  @media screen and(min-width: 768px) and(max-width: 991px) {
+    margin-top: 3%;
+    margin-left: 4%;
+  }
+  @media screen and(min-width: 1447px) {
+    margin-top: 1.7%;
+  }
+  @media screen and(min-width: 1605px) {
+    margin-top: 1.4%;
+  }
+  @media screen and(min-width:1700px) {
+    margin-top: 1.2%;
+    font-size: 2rem;
+    padding: 2px 13px 2px 13px;
+    margin-left: 1%;
+  }
+}
+
+/* fonctionnement fin */
+
+/* Partie Restaurants */
+.main_second {
+  background-color: whitesmoke;
+  padding-top: 40px;
+  padding-bottom: 90px;
+  @media screen and(min-width:992px) {
+    flex: 2;
+    background: linear-gradient(to left, whitesmoke 70%, white);
+  }
+  h2 {
+    font-size: 2.8rem;
+    text-align: left;
+    margin: 5%;
+    border-bottom: 4px solid #99e2d0;
+    width: 0rem;
+    padding-bottom: 10px;
+    transition: width 0.2s linear;
+    &:hover {
+      width: 12.4rem;
+    }
+    @media screen and(min-width:992px) {
+      font-size: 2.3rem;
+    }
+    @media screen and(min-width:1700px) {
+      font-size: 3.7rem;
+      border-bottom: 8px solid #99e2d0;
+      &:hover {
+        width: 20rem;
+      }
+    }
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media screen and(min-width:768px) and (max-width: 991px) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    @media screen and(min-width:992px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+
+  .card {
+    width: 90%;
+    height: 400px;
+    margin: auto auto 30px auto;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 5px 25px lightgrey;
+
+    @media screen and(min-width:768px) and (max-width: 991px) {
+      width: 45%;
+      height: 200px;
+      margin: 4% 2% 4%% 2%;
+    }
+    @media screen and(min-width:992px) {
+      width: 41%;
+      height: 240px;
+      margin: 5% 5% 2% 4%;
+    }
+    @media screen and(min-width:1120px) {
+      width: 40%;
+      height: 280px;
+      margin: 5% 5% 2% 4%;
+    }
+    @media screen and(min-width: 280px) and (max-width: 500px) {
+      height: 300px;
+    }
+    @media screen and(min-width: 1700px) and (max-width: 2000px) {
+      height: 400px;
+    }
+    @media screen and(min-width: 2001px) and (max-width: 2172px) {
+      height: 450px;
+    }
+    @media screen and(min-width: 2173px) {
+      height: 550px;
+    }
+  }
+  .card a {
+    color: #333;
+    text-decoration: none;
+  }
+  .card:hover .card_image img {
+    width: 120%;
+  }
+
+  .card_image {
+    height: 69%;
+    width: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px 25px 0 0;
+    p {
+      position: absolute;
+      border: 1px solid #99e2d0;
+      background-color: #99e2d0;
+      color: #368a75;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      padding: 2%;
+      margin: 5% 0 0 75%;
+      @media screen and(min-width:768px) and (max-width: 991px) {
+        font-size: 1rem;
+        margin: 5% 0 0 70%;
+      }
+      @media screen and(min-width:992px) {
+        font-size: 1rem;
+        margin: 5% 0 0 65%;
+      }
+      @media screen and(min-width:1120) {
+        font-size: 1rem;
+        margin: 5% 0 0 70%;
+      }
+      @media screen and(min-width: 280px) and (max-width: 500px) {
+        margin: 5% 0 0 65%;
+      }
+      @media screen and(min-width: 1700px) {
+        font-size: 2rem;
+      }
+      @media screen and(min-width: 1400px) and (max-width: 1699px) {
+        margin: 5% 0 0 75%;
+      }
+      @media screen and(min-width: 1700px) and (max-width: 2000px) {
+        font-size: 1.7rem;
+      }
+    }
+  }
+  .card_image img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+  }
+
+  .card_body {
+    text-align: left;
+    margin: 20px 0 0 15px;
+    line-height: 2.7rem;
+    padding: 0 0 2px 10px;
+    font-size: 1.7rem;
+    @media screen and(min-width:768px) and (max-width: 991px) {
+      font-size: 1rem;
+      line-height: 1.3rem;
+      margin: 4% 0 0 3%;
+    }
+    @media screen and(min-width:992px) {
+      font-size: 1.1rem;
+      line-height: 1.7rem;
+      margin: 4% 0 0 3%;
+    }
+    @media screen and(min-width:1120px) {
+      font-size: 1.3rem;
+      line-height: 1.7rem;
+      margin: 4% 0 0 3%;
+    }
+    @media screen and(min-width: 280px) and (max-width: 500px) {
+      margin: 2% 0 0 3%;
+    }
+    @media screen and(min-width: 1700px) and (max-width: 2000px) {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+    @media screen and(min-width: 2001px) {
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+    }
+    .card_name {
+      display: flex;
+      justify-content: space-between;
+    }
+    span {
+      margin: 3% 0 0 70%;
+      font-size: 2.5rem;
+      position: absolute;
+      cursor: pointer;
+      @media screen and(min-width:768px) and (max-width: 991px) {
+        margin: 1% 0 0 34%;
+        font-size: 1.3rem;
+      }
+      @media screen and(min-width:992px) {
+        margin: 1.5% 0 0 20%;
+        font-size: 1.7rem;
+      }
+      @media screen and(min-width: 1400px) and (max-width: 1699px) {
+        margin: 1% 0 0 20%;
+      }
+      @media screen and(min-width: 2001px) {
+        font-size: 3.2rem;
+      }
+      @media screen and(min-width: 1700px) and (max-width: 2000px) {
+        font-size: 2.5rem;
+        margin: 1% 0 0 20%;
+      }
+    }
+    .full {
+      opacity: 0;
+      background: -webkit-linear-gradient(bottom right, #ff79da, #9356dc);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      transition: opacity 0.3s;
+      transform: scale(1.4);
+      transition: transform 0.4s;
+      &:active {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+
+    .card_place {
+      color: grey;
+    }
+  }
+}
+
+/* Partie Restaurants fin */
+
+footer {
+  text-align: left;
+  background-color: rgb(56, 56, 56);
+  padding: 40px 0 40px 0;
+  img {
+    filter: invert(100%);
+    margin: 0 0 3% 4%;
+    @media screen and(min-width: 1700px) {
+      height: 80px;
+    }
+  }
+  ul {
+    margin-left: 4%;
+    list-style-type: none;
+    font-size: 1.8rem;
+    color: white;
+    li {
+      padding-top: 12px;
+      .underSize {
+        font-size: 1.3rem;
+        @media screen and(min-width: 1700px) {
+          font-size: 1.9rem;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    @media screen and(min-width: 1700px) {
+      font-size: 2.7rem;
+    }
+  }
+}

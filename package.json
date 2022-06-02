@@ -1,0 +1,11 @@
+{
+  "name": "oh_my_food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:public/css/style.css ./sass/la_palette.scss:public/css/la_palette.css ./sass/le_delice.scss:public/css/le_delice.css ./sass/la_note.scss:public/css/la_note.css ./sass/france.scss:public/css/france.css ./sass/animation.scss:public/css/animation.css --style compressed"
+  },
+  "author": "",
+  "license": "ISC"
+}
