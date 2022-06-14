@@ -175,6 +175,9 @@ header {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  @media screen and (max-width: 425px) {
+    width: 99.5%;
+  }
 }
 .main_title {
   display: flex;
